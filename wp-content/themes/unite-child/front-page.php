@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
-<div class="col-md-9 my-3">
+<div class="col-md-9">
 	<h3>Недвижимость</h3>
-	<div class="row js-real-filter">
+	<div class="row js-real-filter d-flex">
 	<?
 		$reals=get_posts(array('post_type'=>'real',
 			'order'     => 'DESC',

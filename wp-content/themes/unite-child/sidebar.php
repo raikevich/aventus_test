@@ -1,4 +1,4 @@
-<div class="col-md-3 my-3">
+<div class="col-md-3">
 	<h3>Агентства</h3>
 	<ul class="agencies_list">
 	<?
@@ -11,6 +11,6 @@
 			echo '<li data-real-filter="'.$agency->ID.'">'.$agency->post_title.'</li>';
 		}
 	?>
-	<li data-real-filter="all" class="btn btn-info mt-3">Вся недвижимость</li>
 	</ul>
+	<button data-real-filter="all" class="btn btn-info mt-3">Вся недвижимость</button>
 </div>

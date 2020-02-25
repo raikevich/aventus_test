@@ -2,8 +2,8 @@
 // Connection parent style.css and bootstrap 4
 add_action( 'wp_enqueue_scripts', 'custom_style' , 20);
 function custom_style() {
-	wp_dequeue_style( 'bootstrap' );
-	wp_enqueue_style( 'bootstrap-4', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
+	//wp_dequeue_style( 'bootstrap' );
+	//wp_enqueue_style( 'bootstrap-4', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' );
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 	
 }
@@ -97,7 +97,7 @@ add_action('init', 'agency_init');
 // Front Real item
 function front_real($id) {
 	$output='';
-	$output.= '<div class="col-md-4">
+	$output.= '<div class="col-md-4 mb-4">
 		<h4 class="text-center">'.get_the_title($id).'</h4>';
 	
 	$properties_real = ['space','cost','address','living_space','floor'];
