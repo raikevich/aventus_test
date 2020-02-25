@@ -2,13 +2,19 @@
 	<h3>Агентства</h3>
 	<ul class="agencies_list">
 	<?
+		$get_agent=0;
+		if($_GET['agent']) {
+			$get_agent=$_GET['agent'];
+		}
 		$agencies=get_posts(array('post_type'=>'agency',
 			'order'     => 'DESC',
 			'orderby'   => 'date',
 			'posts_per_page' => -1
 		));
 		foreach($agencies as $agency) {
-			echo '<li data-real-filter="'.$agency->ID.'">'.$agency->post_title.'</li>';
+			$cl='';
+			if($agency->ID==$get_agent) $cl=' class="active"';
+			echo '<li data-real-filter="'.$agency->ID.'"'.$cl.'>'.$agency->post_title.'</li>';
 		}
 	?>
 	</ul>

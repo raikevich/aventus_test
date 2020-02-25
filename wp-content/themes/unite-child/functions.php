@@ -98,7 +98,7 @@ add_action('init', 'agency_init');
 function front_real($id) {
 	$output='';
 	$output.= '<div class="col-md-4 mb-4">
-		<h4 class="text-center">'.get_the_title($id).'</h4>';
+		<h4 class="text-center"><a href="'.get_the_permalink($id).'">'.get_the_title($id).'</a></h4>';
 	
 	$properties_real = ['space','cost','address','living_space','floor'];
 	
@@ -119,7 +119,6 @@ function front_real($id) {
 		$output.= $prop_value?'<li>'.$prop_name.': '.$prop_value.'</li>':'';
 	}
 	$output.= '</ul>';
-	//print_r(get_field('space',$id));
 	
 	$output.= '</div>';
 	
