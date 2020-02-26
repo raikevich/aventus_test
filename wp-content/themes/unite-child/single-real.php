@@ -22,11 +22,11 @@
 				set_transient('property_name_'.$prop, $prop_name, DAY_IN_SECONDS);
 			}
 			
-			$prop_value = false;
+			$prop_value = get_transient('property_'.$prop.'_'.$id);
 			if($prop_value===false){
 				if($prop=='agency') {
 					$prop_value = get_field($prop,$id);
-					$prop_value = '<a href="/real/?agent='.$prop_value->ID.'">'.$prop_value->post_title.'</a>';
+					$prop_value = '<a href="/real/?agent='.$prop_value->post_name.'">'.$prop_value->post_title.'</a>';
 				} else {
 					$prop_value = get_field($prop,$id);
 				}

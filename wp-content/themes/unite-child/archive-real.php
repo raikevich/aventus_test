@@ -5,11 +5,12 @@
 	<? global $query_string;
 	$meta_query = '';
 	if(isset($_GET['agent'])){
+		$agent_post = get_page_by_path($_GET['agent'], OBJECT, 'agency');
 		$meta_query = array(
 			'relation'	=> 'AND',
 			array(
 				'key'     => 'agency',
-				'value'   => $_GET['agent'],
+				'value'   => $agent_post->ID,
 				'compare' => '='
 			),
 		);

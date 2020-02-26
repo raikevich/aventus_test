@@ -3,7 +3,8 @@ var $=jQuery.noConflict();
 $(document).ready(function() {
 	if($('[data-real-filter]').length){
 		$('[data-real-filter]').on('click',function(){
-			$(this).siblings().removeClass('active');
+			let el = $(this);
+			$('[data-real-filter]').removeClass('active');
 			let js_real_filter = $('.js-real-filter');
 			let data={
 				action:'real_filter', // in plugin Real Agency
@@ -18,7 +19,7 @@ $(document).ready(function() {
 					js_real_filter.addClass('ajax_active');
 				},
 				success:function(data) {
-					$(this).addClass('active');
+					el.addClass('active');
 					js_real_filter.html(data);
 					js_real_filter.removeClass('ajax_active');
 				}

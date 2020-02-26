@@ -4,7 +4,8 @@
 	<?
 		$get_agent=0;
 		if(isset($_GET['agent'])) {
-			$get_agent=$_GET['agent'];
+			$agent_post = get_page_by_path($_GET['agent'], OBJECT, 'agency');
+			$get_agent=$agent_post->ID;
 		}
 		$agencies=get_posts(array('post_type'=>'agency',
 			'order'     => 'DESC',
