@@ -9,8 +9,10 @@
 			'orderby'   => 'date',
 			'posts_per_page' => -1
 		));
-		foreach($reals as $real) {
-			front_real($real->ID); // create in function.php child-theme
+		if(function_exists('front_real')){
+			foreach($reals as $real) {
+				front_real($real->ID); // create in function.php child-theme
+			}
 		}
 	?>
 	</div>

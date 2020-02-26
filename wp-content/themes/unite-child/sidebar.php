@@ -3,7 +3,7 @@
 	<ul class="agencies_list">
 	<?
 		$get_agent=0;
-		if($_GET['agent']) {
+		if(isset($_GET['agent'])) {
 			$get_agent=$_GET['agent'];
 		}
 		$agencies=get_posts(array('post_type'=>'agency',
